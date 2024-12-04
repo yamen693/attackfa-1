@@ -8,120 +8,150 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link href="./attack (1).png" rel="icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
+            margin: 0; /* Reset margin */
         }
+
         .fade-in {
             animation: fadeIn 2s ease-in-out;
         }
+
         .slide-in {
             animation: slideIn 1s ease-in-out;
         }
+
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
+
         @keyframes slideIn {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
+
         .hover-raise {
             transition: transform 0.3s, box-shadow 0.3s;
         }
+
         .hover-raise:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
+
         .gradient-bg {
             background: linear-gradient(135deg, #1a202c, #2d3748);
         }
+
         .gradient-text {
             background: linear-gradient(135deg, #1a202c, #2d3748);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .transition-bg {
             transition: background-color 0.3s ease-in-out;
         }
+
         .transition-bg:hover {
             background-color: #2d3748;
         }
+
         .hover-front {
             transition: transform 0.3s, z-index 0.3s;
         }
+
         .hover-front:hover {
             transform: scale(1.05);
             z-index: 10;
         }
+
         .transition-text {
             transition: color 0.3s ease-in-out;
         }
+
         .transition-text:hover {
             color: white;
         }
+
         .transition-text-white {
             transition: color 0.3s ease-in-out;
         }
+
         .transition-text-white:hover {
             color: white;
+        }
+
+        /* Crosswise Text Style */
+        .crosswise {
+            display: inline-block;
+            transform: rotate(-45deg);
+            margin: 20px; /* Margin around the text */
+            font-size: 24px; /* Base font size */
+            color: #333; /* Text color */
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .crosswise {
+                font-size: 20px; /* Smaller font size for tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .crosswise {
+                font-size: 16px; /* Even smaller font size for mobile */
+            }
         }
     </style>
 </head>
 <body class="bg-off-white">
-    <header class="bg-black text-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
+    <header class="absolute top-0 left-0 w-full z-10">
+        <div class="container mx-auto flex justify-between items-center p-4">
             <div class="flex items-center">
-                <img alt="Attack Academy Logo" class="h-12 w-12 mr-3 hover-front" height="50" src="./attack (1).png" width="50"/>
-                <h1 class="text-2xl font-bold fade-in italic" id="title">Attack Football Academy</h1>
+                <img class="h-12 w-12 mr-3 hover-front" height="50" src="./attack (1).png" width="50"/>
+                <h1 class="text-2xl font-bold fade-in text-white" id="title">Attack Football Academy</h1>
             </div>
             <nav class="flex items-center">
-                <button class="block md:hidden text-2xl" id="menu-button">
+                <button class="block md:hidden text-2xl text-white" id="menu-button">
                     <i class="fas fa-bars"></i>
                 </button>
-                <ul class="hidden md:flex space-x-4" id="menu">
-                    <li><a  href="#about" id="about-link">About Us</a></li>
-                    <li><a  href="#coaches" id="coaches-link">Our Coaches</a></li>
-                    <li><a  href="#goalkeeper-coaches" id="goalkeeper-coaches-link">Goalkeeper Coaches</a></li>
-                    <li><a   href="#programs" id="programs-link">Our Programs</a></li>
-                    <li><a  href="https://yamen693.github.io/attack-final/" id="contact-link">Contact</a></li>
+                <ul class="hidden md:flex space-x-4 text-white" id="menu">
+                    <li><a href="#about" id="about-link">About Us</a></li>
+                    <li><a href="#coaches" id="coaches-link">Our Coaches</a></li>
+                    <li><a href="#goalkeeper-coaches" id="goalkeeper-coaches-link">Goalkeeper Coaches</a></li>
+                    <li><a href="#programs" id="programs-link">Our Programs</a></li>
+                    <li><a href="https://yamen693.github.io/attack-final/" id="contact-link">Contact</a></li>
                 </ul>
                 <div class="flex space-x-2 ml-4">
-                    <button class="bg-white text-black-500 font-bold py-2 px-4 rounded transition-bg" id="en-button" style="color: black;">EN</button>
-                    <button class="bg-white text-black-500 font-bold py-2 px-4 rounded transition-bg" id="ar-button" style="color: black;">AR</button>
+                    <button class="bg-[rgb(232,181,70)] text-white font-bold py-2 px-4 rounded-full shadow-lg hover:bg-[rgb(0,0,0)] transition-bg" id="en-button">EN</button>
+                    <button class="bg-[rgb(232,181,70)] text-white font-bold py-2 px-4 rounded-full shadow-lg hover:bg-[rgb(0,0,0)] transition-bg" id="ar-button">AR</button>
                 </div>
             </nav>
         </div>
-        <div class="md:hidden hidden" id="mobile-menu">
+        <div class="md:hidden hidden bg-black text-white p-4" id="mobile-menu">
             <ul class="flex flex-col space-y-2 mt-4">
-                <li><a  href="#about" id="mobile-about-link">About Us</a></li>
-                <li><a  href="#coaches" id="mobile-coaches-link">Our Coaches</a></li>
-                <li><a  href="#goalkeeper-coaches" id="mobile-goalkeeper-coaches-link">Goalkeeper Coaches</a></li>
-                <li><a  href="#programs" id="mobile-programs-link">Our Programs</a></li>
+                <li><a href="#about" id="mobile-about-link">About Us</a></li>
+                <li><a href="#coaches" id="mobile-coaches-link">Our Coaches</a></li>
+                <li><a href="#goalkeeper-coaches" id="mobile-goalkeeper-coaches-link">Goalkeeper Coaches</a></li>
+                <li><a href="#programs" id="mobile-programs-link">Our Programs</a></li>
                 <li><a href="https://yamen693.github.io/attack-final/" id="mobile-contact-link">Contact</a></li>
             </ul>
         </div>
     </header>
     <section class="relative">
-        <img alt="A group of young soccer players practicing on a lush green field under a clear blue sky" class="w-full h-96 object-cover" height="400" src="./WhatsApp Image 2024-11-04 at 10.19.44 PM.jpeg" width="1200"/>
+        <img class="w-full h-96 object-cover" height="400" src="./WhatsApp Image 2024-11-04 at 10.19.44 PM.jpeg" width="1200"/>
         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <h2 class="text-4xl font-bold text-white italic" id="welcome-text">Welcome to Attack Academy</h2>
+            <h2 class="text-4xl font-bold text-white" id="welcome-text">Welcome to Attack Academy</h2>
         </div>
     </section>
     <section class="py-12 bg-white fade-in" id="about">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4 gradient-text italic" id="about-title">About Us</h2>
-            <p class="text-black leading-relaxed italic" id="about-text">
+            <h2 class="text-3xl font-bold mb-4 gradient-text" id="about-title">About Us</h2>
+            <p class="text-black leading-relaxed" id="about-text">
                 Attack Football Academy works to provide positive basics to players with high-quality techniques in an environment conducive to this. All training periods are specifically designed to work on the players’ personalities and develop their personal and physical skills.
                 The academy works in training units in the physical, technical, psychological and tactical aspects.
                 Participation of the two distinguished players in EFA League, Cairo region.
@@ -130,73 +160,73 @@
     </section>
     <section class="py-12 bg-black text-white" id="coaches">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4 text-white slide-in italic" id="coaches-title">Our Coaches</h2>
+            <h2 class="text-3xl font-bold mb-4 text-white slide-in" id="coaches-title">Our Coaches</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-yellow-100 p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
-                    <img alt="Coach John Doe, a middle-aged man with short brown hair and a friendly smile" class="h-32 w-32 mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/3GRM1fWTFW3iTSpN5W78h6yNsZqanE4IE3EuMKSFRAKBdH7JA.jpg" width="150"/>
-                    <h3 class="text-black mb-4 italic transition-text-white" id="coach1-name">John Doe</h3>
-                    <p class="text-black mb-4 italic transition-text-white" id="coach1-desc">Head Coach with 20 years of experience in professional soccer.</p>
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
+                    <img alt="Coach John Doe, a middle-aged man with short brown hair and a friendly smile" class="h-32 w-32 mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/ZeLLC0aMFpz5FalX77lpGivzV1DQ3DGnE8Wxcq6a5l7n2x7JA.jpg" width="150"/>
+                    <h3 class="text-black mb-4 transition-text-white" id="coach1-name">John Doe</h3>
+                    <p class="text-black mb-4 transition-text-white" id="coach1-desc">Head Coach with 20 years of experience in professional soccer.</p>
                 </div>
-                <div class="bg-yellow-100 p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
-                    <img alt="Coach Jane Smith, a young woman with long blonde hair and a determined expression" class="h-32 w-32 mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/1h69ieExCWUiJSt4IrwNEr9Jn7U4RUNnaWXyUA2ktPVe5O2TA.jpg" width="150"/>
-                    <h3 class="text-black mb-4 italic transition-text-white" id="coach2-name">Jane Smith</h3>
-                    <p class="text-black mb-4 italic transition-text-white" id="coach2-desc">Assistant Coach specializing in youth development.</p>
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
+                    <img alt="Coach Jane Smith, a young woman with long blonde hair and a determined expression" class="h-32 w-32 mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/dVDE9pbMbpLpH1W6INMBetsqEBe5rq6E63AGymPKoBbTtj3TA.jpg" width="150"/>
+                    <h3 class="text-black mb-4 transition-text-white" id="coach2-name">Jane Smith</h3>
+                    <p class="text-black mb-4 transition-text-white" id="coach2-desc">Assistant Coach specializing in youth development.</p>
                 </div>
-                <div class="bg-yellow-100 p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
-                    <img alt="Coach Mike Johnson, a tall man with short black hair and a serious look" class="h-32 w-32 mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/ZMNyNxEaUd4wCtnhutxkWGxbjI8K4PvrzJ3HSl55D15guj9E.jpg" width="150"/>
-                    <h3 class="text-black mb-4 italic transition-text-white" id="coach3-name">Mike Johnson</h3>
-                    <p class="text-black mb-4 italic transition-text-white" id="coach3-desc">Fitness Coach with a background in sports science.</p>
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
+                    <img alt="Coach Mike Johnson, a tall man with short black hair and a serious look" class="h-32 w-32 mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/4h5HFfgbWRSnVqMMfEHHJevLZwSXIzfCq6inzqFBgAk30OeeE.jpg" width="150"/>
+                    <h3 class="text-black mb-4 transition-text-white" id="coach3-name">Mike Johnson</h3>
+                    <p class="text-black mb-4 transition-text-white" id="coach3-desc">Fitness Coach with a background in sports science.</p>
                 </div>
-                <div class="bg-yellow-100 p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
-                    <img alt="Coach Sarah Lee, a young woman with short black hair and a confident smile" class="h-32 w-32 mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/0MHIjce2oBVZLyLOUB0EsyRdZjup9cjc5INfE36aa6F95O2TA.jpg" width="150"/>
-                    <h3 class="text-black mb-4 italic transition-text-white" id="coach4-name">Sarah Lee</h3>
-                    <p  class="text-black mb-4 italic transition-text-white" id="coach4-desc">Technical Coach with a focus on skill development.</p>
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
+                    <img alt="Coach Sarah Lee, a young woman with short black hair and a confident smile" class="h-32 w-32 mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/EUvlOLjJPfx9OKKP5IrArW80WtBcYqfRUqMD1sejEXQiaHvnA.jpg" width="150"/>
+                    <h3 class="text-black mb-4 transition-text-white" id="coach4-name">Sarah Lee</h3>
+                    <p class="text-black mb-4 transition-text-white" id="coach4-desc">Technical Coach with a focus on skill development.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="py-12 bg-white" id="goalkeeper-coaches">
+    <section class="py-12 bg-white"  style="align-items: center;" id="goalkeeper-coaches">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4 gradient-text slide-in italic" id="goalkeeper-coaches-title">Goalkeeper Coaches</h2>
+            <h2 class="text-3xl font-bold mb-4 gradient-text slide-in" id="goalkeeper-coaches-title">Goalkeeper Coaches</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-yellow-100 p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
-                    <img alt="Coach David Brown, a middle-aged man with a beard and a serious expression" class="h-32 w-32 mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/yPbyfvJczPw2ZyMp2OgTYywfPDUsOmRMrYQmmfrzQpJen7YPB.jpg" width="150"/>
-                    <h3 class="text-black mb-4 italic transition-text-white" id="goalkeeper-coach1-name">David Brown</h3>
-                    <p class="text-black mb-4 italic transition-text-white" id="goalkeeper-coach1-desc">Goalkeeper Coach with a history of training top goalkeepers.</p>
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
+                    <img alt="Coach David Brown, a middle-aged man with a beard and a serious expression" class="h-32 w-32 mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/7XtRsuPrYUpwD9mePlvyEN30EnlnGwdGGpthtwAcY3Nk2x7JA.jpg" width="150"/>
+                    <h3 class="text-black mb-4 transition-text-white" id="goalkeeper-coach1-name">David Brown</h3>
+                    <p class="text-black mb-4 transition-text-white" id="goalkeeper-coach1-desc">Goalkeeper Coach with a history of training top goalkeepers.</p>
                 </div>
-                <div class="bg-yellow-100 p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
-                    <img alt="Coach Emily Davis, a young woman with curly red hair and a bright smile" class="h-32 w-32 mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/X7bA3i3GqNZ6BZs0QMUYcgF55DvAG30NYnG7qybcMlaguj9E.jpg" width="150"/>
-                    <h3 class="text-black mb-4 italic transition-text-white" id="goalkeeper-coach2-name">Emily Davis</h3>
-                    <p class="text-black mb-4 italic transition-text-white" id="goalkeeper-coach2-desc">Assistant Goalkeeper Coach with a focus on youth training.</p>
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
+                    <img alt="Coach Emily Davis, a young woman with curly red hair and a bright smile" class="h-32 w-32 mx-auto rounded-full mb-4" height="150" src="https://storage.googleapis.com/a1aa/image/HzHtlduAZQZdPNUAiYePeXqy2cNAREez6IfevUw4vlHUpd8eE.jpg" width="150"/>
+                    <h3 class="text-black mb-4 transition-text-white" id="goalkeeper-coach2-name">Emily Davis</h3>
+                    <p class="text-black mb-4 transition-text-white" id="goalkeeper-coach2-desc">Assistant Goalkeeper Coach with a focus on youth training.</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="py-12 bg-white" id="programs">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4 gradient-text slide-in italic" id="programs-title">Our Programs</h2>
+            <h2 class="text-3xl font-bold mb-4 gradient-text slide-in" id="programs-title">Our Programs</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-yellow-100 p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
-                    <h3 class="text-xl font-bold mb-2 text-black italic" id="program1-title">Beginner Program</h3>
-                    <p class="text-black mb-4 italic transition-text-white" id="program1-desc">Perfect for young players just starting out. Focuses on basic skills and fun.</p>
-                    <p class="text-yellow-600 font-bold italic" id="program1-price">$100/month</p>
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
+                    <h3 class="text-xl font-bold mb-2 text-black transition-text-white" id="program1-title">Beginner Program</h3>
+                    <p class="text-black mb-4 transition-text-white" id="program1-desc">Perfect for young players just starting out. Focuses on basic skills and fun.</p>
+                    <p class="text-yellow-600 font-bold" id="program1-price">$100/month</p>
                 </div>
-                <div class="bg-yellow-100 p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
-                    <h3 class="text-xl font-bold mb-2 text-black italic" id="program2-title">Intermediate Program</h3>
-                    <p class="text-black mb-4 italic transition-text-white" id="program2-desc">Designed for players with some experience. Emphasizes skill development and teamwork.</p>
-                    <p class="text-yellow-600 font-bold italic" id="program2-price">$150/month</p>
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
+                    <h3 class="text-xl font-bold mb-2 text-black transition-text-white" id="program2-title">Intermediate Program</h3>
+                    <p class="text-black mb-4 transition-text-white" id="program2-desc">Designed for players with some experience. Emphasizes skill development and teamwork.</p>
+                    <p class="text-yellow-600 font-bold" id="program2-price">$150/month</p>
                 </div>
-                <div class="bg-yellow-100 p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
-                    <h3 class="text-xl font-bold mb-2 text-black italic transition-text-white" id="program3-title">Advanced Program</h3>
-                    <p class="text-black mb-4 italic transition-text-white" id="program3-desc">For advanced players aiming for professional careers. Intense training and competition.</p>
-                    <p class="text-yellow-600 font-bold italic" id="program3-price">$200/month</p>
+                <div class="bg-[rgb(232,181,70)] p-6 rounded-lg shadow-lg slide-in hover-raise transition-bg">
+                    <h3 class="text-xl font-bold mb-2 text-black transition-text-white" id="program3-title">Advanced Program</h3>
+                    <p class="text-black mb-4 transition-text-white" id="program3-desc">For advanced players aiming for professional careers. Intense training and competition.</p>
+                    <p class="text-yellow-600 font-bold" id="program3-price">$200/month</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="py-12 gradient-bg" id="maggie-section">
         <div class="container mx-auto flex flex-col md:flex-row items-center md:items-start">
-            <img alt="Portrait of a woman with blonde hair and a green shirt" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 hover-front" height="200" src="https://storage.googleapis.com/a1aa/image/U30fYEjaUeh5l0grHeQxHdmDKxovHPiKQuTZCLCNmqFK0dsnA.jpg" width="200"/>
+            <img alt="Portrait of a woman with blonde hair and a green shirt" class="w-48 h-48 rounded-full mb-6 md:mb-0 md:mr-8 hover-front" height="200" src="https://storage.googleapis.com/a1aa/image/slqRPqejfCiLiECfTbz7eJACMulE9ZvcrITeyfaNdKJBV749E.jpg" width="200"/>
             <div class="text-center md:text-left">
                 <h1 class="text-3xl font-bold mb-4 text-white" id="ph">
                     <br/>
@@ -204,16 +234,15 @@
                     <br/>
                     Support Professional
                 </h1>
-                <p class="text-white mb-6 italic" id="php">
+                <p class="text-white mb-6" id="php">
                     I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
                 </p>
-               
             </div>
         </div>
     </section>
-    <footer class="bg-yellow-500 text-black py-4">
+    <footer class="bg-[rgb(232,181,70)] text-black py-4">
         <div class="container mx-auto text-center transition-text">
-            <p class="italic transition-text hover:text-white" id="footer-text">© 2024 Attack Academy. All rights reserved.</p>
+            <p class="transition-text hover:text-white" id="footer-text">© 2024 Attack Academy. All rights reserved.</p>
             <div class="flex justify-center space-x-4 mt-4">
                 <a class="text-black hover:text-white transition-text" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a class="text-black hover:text-white transition-text" href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -279,7 +308,7 @@
             document.getElementById('title').innerText = 'أكاديمية أتاك ';
             document.getElementById('welcome-text').innerText = 'اهلا بكم في أكادمية أتاك';
             document.getElementById('about-title').innerText = ' من نحن';
-            document.getElementById('about-text').innerText = '  تعمل أكادمية أتاك علي توفير الأساسيات الايجابيه للاعبين بتقنيات عالية الجوده في بيئه مناسبه لذالك.جميع فترات التدريب مصممه خصيصا للعمل علي شخصيات الاعبين و تطوير مهارتهم الشخصيه و البدنيهز و تعمل الاكادميه من خلال وحدات تدريبيه في الجوانب البدنيه و الفنيه والنفسيهوالتيكتيكية .و مشاركة الاعبين المميزين في الدوري المصري بمنطقة القاهره';
+            document.getElementById('about-text').innerText = 'مرحبًا بكم في أكاديميةأتاك، حيث نرعى المواهب الشابة ونساعدهم على تحقيق أحلامهم في أن يصبحوا لاعبي كرة قدم محترفين. نحن في الأكاديمية ملتزمون بتقديم تدريب ومرافق من الدرجة الأولى لضمان أفضل تطوير للاعبينا.';
             document.getElementById('coaches-title').innerText = 'مدربونا';
             document.getElementById('coach1-name').innerText = 'جون دو';
             document.getElementById('coach1-desc').innerText = 'المدرب الرئيسي';
