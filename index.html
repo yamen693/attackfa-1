@@ -93,19 +93,65 @@
             font-size: 24px; /* Base font size */
             color: #333; /* Text color */
         }
-
-        /* Media Queries */
+        /* Media Query for devices with a max width of 768px */
         @media (max-width: 768px) {
-            .crosswise {
-                font-size: 20px; /* Smaller font size for tablets */
+            body {
+                background-color: #fff; /* Change background color for mobile */
             }
-        }
 
-        @media (max-width: 480px) {
-            .crosswise {
-                font-size: 16px; /* Even smaller font size for mobile */
+            h1 {
+                font-size: 0.5em; /* Reduce font size for headings */
             }
-        }
+
+            h2 {
+                font-size: 1.8em; /* Adjust h2 font size */
+            }
+
+            p {
+                font-size: 0.9em; /* Reduce font size for paragraphs */
+                
+            }
+
+            .container {
+                padding: 10px; /* Add padding for mobile */
+            }
+
+            .nav {
+                flex-direction: column; /* Stack navigation items vertically */
+            }
+
+            .hover-raise {
+                margin: 10px 0; /* Add margin for hover effects */
+            }
+
+            .bg-black {
+                padding: 10px; /* Adjust padding for mobile */
+            }
+
+            .bg-[rgb(232,181,70)] {
+                padding: 4px; /* Adjust padding for program cards */
+            }
+
+            img {
+                width: 100%; /* Make images responsive */
+                height: auto; /* Maintain aspect ratio */
+            }
+            #language-select {
+                width: 100%; /* Full width for mobile */
+                max-width: 200px; /* Limit max width */
+                padding: 10px; /* Padding for better touch targets */
+                border-radius: 5px; /* Rounded corners */
+                background-color: rgb(232, 181, 70); /* Background color */
+                color: white; /* Text color */
+                font-weight: bold; /* Bold text */
+            }
+            
+            #language-select option {
+                padding: 10px; /* Padding for options */
+            }
+        
+
+      
     </style>
 </head>
 <body class="bg-off-white">
@@ -127,8 +173,11 @@
                     <li><a href="https://yamen693.github.io/attack-final/" id="contact-link">Contact</a></li>
                 </ul>
                 <div class="flex space-x-2 ml-4">
-                    <button class="bg-[rgb(232,181,70)] text-white font-bold py-2 px-4 rounded-full shadow-lg hover:bg-[rgb(0,0,0)] transition-bg" id="en-button">EN</button>
-                    <button class="bg-[rgb(232,181,70)] text-white font-bold py-2 px-4 rounded-full shadow-lg hover:bg-[rgb(0,0,0)] transition-bg" id="ar-button">AR</button>
+                  
+                    <select id="language-select" class="bg-[rgb(232,181,70)] text-white font-bold py-2 px-4 rounded-full shadow-lg hover:bg-[rgb(0,0,0)] transition-bg">
+                        <option value="en" data-flag="🇬🇧">EN</option>
+                        <option value="ar" data-flag="🇸🇦">AR</option>
+                    </select>
                 </div>
             </nav>
         </div>
@@ -145,7 +194,7 @@
     <section class="relative">
         <img class="w-full h-96 object-cover" height="400" src="./WhatsApp Image 2024-11-04 at 10.19.44 PM.jpeg" width="1200"/>
         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <h2 class="text-4xl font-bold text-white" id="welcome-text">Welcome to Attack Academy</h2>
+            
         </div>
     </section>
     <section class="py-12 bg-white fade-in" id="about">
@@ -253,18 +302,10 @@
         </div>
     </footer>
     <script>
-        document.getElementById('menu-button').addEventListener('click', function() {
-            var menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
-        });
-
-        document.getElementById('en-button').addEventListener('click', function() {
-            document.getElementById('title').innerText = 'Attack Football Academy';
-            document.getElementById('welcome-text').innerText = 'Welcome to Attack Academy';
+        document.getElementById('language-select').addEventListener('change', function() {
+            const selectedLanguage = this.value;
+            if (selectedLanguage === 'en') {
+                document.getElementById('title').innerText = 'Attack Football Academy';
             document.getElementById('about-title').innerText = 'About Us';
             document.getElementById('about-text').innerText = 'Welcome to Soccer Academy, where we nurture young talents and help them achieve their dreams of becoming professional soccer players. Our academy is dedicated to providing top-notch training and facilities to ensure the best development for our players.';
             document.getElementById('coaches-title').innerText = 'Our Coaches';
@@ -302,13 +343,14 @@
             document.getElementById('mobile-goalkeeper-coaches-link').innerText = 'Goalkeeper Coaches';
             document.getElementById('mobile-programs-link').innerText = 'Our Programs';
             document.getElementById('mobile-contact-link').innerText = 'Contact';
-        });
+                document.getElementById('title').innerText = 'Attack Football Academy';
+                
+            } else if (selectedLanguage === 'ar') {
+                // Change content to Arabic
+                document.getElementById('title').innerText = 'أكاديمية أتاك';
+                document.getElementById('about-title').innerText = ' من نحن';
+            document.getElementById('about-text').innerText ='اكادمية اتاك تعمل علي تقديم الاساسيات الايجابيه للاعبين بتقنيات عالية الجوده في بيئه  تساعده لذالك كل فترات التدريب مصممه خصيصا للعمل علي شخصية الاعبين و تطوير مهراتهم الشخصيه و البدنيه تعمل الاكادميه في الوحدات التدريبيه في الناحيه البدنيه و الفنيه والنفسيه و الخططيه , مشاركة الاعبين في دوري اتحاد الكوره بمنطقة القاهره';
 
-        document.getElementById('ar-button').addEventListener('click', function() {
-            document.getElementById('title').innerText = 'أكاديمية أتاك ';
-            document.getElementById('welcome-text').innerText = 'اهلا بكم في أكادمية أتاك';
-            document.getElementById('about-title').innerText = ' من نحن';
-            document.getElementById('about-text').innerText = 'مرحبًا بكم في أكاديميةأتاك، حيث نرعى المواهب الشابة ونساعدهم على تحقيق أحلامهم في أن يصبحوا لاعبي كرة قدم محترفين. نحن في الأكاديمية ملتزمون بتقديم تدريب ومرافق من الدرجة الأولى لضمان أفضل تطوير للاعبينا.';
             document.getElementById('coaches-title').innerText = 'مدربونا';
             document.getElementById('coach1-name').innerText = 'جون دو';
             document.getElementById('coach1-desc').innerText = 'المدرب الرئيسي';
@@ -344,6 +386,110 @@
             document.getElementById('mobile-goalkeeper-coaches-link').innerText = 'مدربون الهدف الذيمين';
             document.getElementById('mobile-programs-link').innerText = 'البرامج';
             document.getElementById('mobile-contact-link').innerText = 'اتصل بنا';
-           
-         });
+            }
+            ```javascript
+// Create an object to store translations
+const translations = {
+  en: {
+    title: 'Attack Football Academy',
+    aboutTitle: 'About Us',
+    aboutText: 'Welcome to Soccer Academy, where we nurture young talents and help them achieve their dreams of becoming professional soccer players. Our academy is dedicated to providing top-notch training and facilities to ensure the best development for our players.',
+    coachesTitle: 'Our Coaches',
+    coach1Name: 'John Doe',
+    coach1Desc: 'Head Coach with 20 years of experience in professional soccer.',
+    coach2Name: 'Jane Smith',
+    coach2Desc: 'Assistant Coach specializing in youth development.',
+    coach3Name: 'Mike Johnson',
+    coach3Desc: 'Fitness Coach with a background in sports science.',
+    coach4Name: 'Sarah Lee',
+    coach4Desc: 'Technical Coach with a focus on skill development.',
+    goalkeeperCoachesTitle: 'Goalkeeper Coaches',
+    goalkeeperCoach1Name: 'David Brown',
+    goalkeeperCoach1Desc: 'Goalkeeper Coach with a history of training top goalkeepers.',
+    goalkeeperCoach2Name: 'Emily Davis',
+    goalkeeperCoach2Desc: 'Assistant Goalkeeper Coach with a focus on youth training.',
+    programsTitle: 'Our Programs',
+    program1Title: 'Beginner Program',
+    program1Desc: 'Perfect for young players just starting out. Focuses on basic skills and fun.',
+    program1Price: '$100/month',
+    program2Title: 'Intermediate Program',
+    program2Desc: 'Designed for players with some experience. Emphasizes skill development and teamwork.',
+    program2Price: '$150/month',
+    program3Title: 'Advanced Program',
+    program3Desc: 'For advanced players aiming for professional careers. Intense training and competition.',
+    program3Price: '$200/month',
+    footerText: ' 2024 Attack Academy. All rights reserved.',
+    aboutLink: 'About Us',
+    coachesLink: 'Our Coaches',
+    goalkeeperCoachesLink: 'Goalkeeper Coaches',
+    programsLink: 'Our Programs',
+    contactLink: 'Contact',
+    mobileAboutLink: 'About Us',
+    mobileCoachesLink: 'Our Coaches',
+    mobileGoalkeeperCoachesLink: 'Goalkeeper Coaches',
+    mobileProgramsLink: 'Our Programs',
+    mobileContactLink: 'Contact',
+  },
+  ar: {
+    title: 'أكاديمية أتاك',
+    aboutTitle: 'من نحن',
+    aboutText: 'اكادمية اتاك تعمل علي تقديم الاساسيات الايجابيه للاعبين بتقنيات عالية الجوده في بيئه  تساعده لذالك كل فترات التدريب مصممه خصيصا للعمل علي شخصية الاعبين و تطوير مهراتهم الشخصيه و البدنيه تعمل الاكادميه في الوحدات التدريبيه في الناحيه البدنيه و الفنيه والنفسيه و الخططيه , مشاركة الاعبين في دوري اتحاد الكوره بمنطقة القاهره',
+    coachesTitle: 'مدربونا',
+    coach1Name: 'جون دو',
+    coach1Desc: 'المدرب الرئيسي',
+    coach2Name: 'جين سميث',
+    coach2Desc: 'المدرب الفرعي',
+    coach3Name: 'مايك جونسون',
+    coach3Desc: 'المدرب التكنولوجي',
+    coach4Name: 'سارا لي',
+    coach4Desc: 'المدرب التكنولوجي',
+    goalkeeperCoachesTitle: 'مدربين الحراس',
+    goalkeeperCoach1Name: 'دافي برون',
+    goalkeeperCoach1Desc: 'المدرب الر��يسي',
+    goalkeeperCoach2Name: '��ميل ديفيس',
+    goalkeeperCoach2Desc: 'المدرب الفرعي',
+    programsTitle: 'البرامج',
+    program1Title: 'برنامج المبتدئين',
+    program1Desc: 'للأطفال المبتدئين المتوا��دين. تطوير أدوات التعليم والمشاركة في التمارين.',
+    program1Price: '$100/شهر',
+    program2Title: 'برنامج المتوسط',
+    program2Desc: 'مصمم لللاعبين ذوي',
+    program2Price: '$150/شهر',
+    program3Title: 'برنامج المتقدم',
+    program3Desc: 'للمتقدمين. التدريب الش',
+    program3Price: '$200/شهر',
+    footerText: ' 2024أكاديمية أتاك ',
+    aboutLink: 'من نحن ',
+    coachesLink: 'مدربونا',
+    goalkeeperCoachesLink: 'مدربون الحراس',
+    programsLink: 'البرامج',
+    contactLink: 'تواصل معنا',
+    mobileAboutLink: 'من نحن ',
+    mobileCoachesLink: 'مدربونا',
+    mobileGoalkeeperCoachesLink: 'مدربون الهدف الذيمين',
+    mobileProgramsLink: 'البرامج',
+    mobileContactLink: 'اتصل بنا',
+  }
+};
+
+// Function to translate content
+function translateContent(language) {
+  const translation = translations[language];
+  Object.keys(translation).forEach(key => {
+    const element = document.getElementById(key);
+    if (element) {
+      element.innerText = translation[key];
+    }
+  });
+}
+
+
+// Add event listener to language select
+document.getElementById('language-select').addEventListener('change', function() {
+  const selectedLanguage = this.value;
+  translateContent(selectedLanguage);
+});
+
+```
+        } );
         </script></body></html>
