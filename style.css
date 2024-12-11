@@ -73,15 +73,6 @@ body {
     color: white;
 }
 
-/* Crosswise Text Style */
-.crosswise {
-    display: inline-block;
-    transform: rotate(-45deg);
-    margin: 20px; /* Margin around the text */
-    font-size: 24px; /* Base font size */
-    color: #333; /* Text color */
-}
-
 /* Media Query for devices with a max width of 768px */
 @media (max-width: 768px) {
     body {
@@ -112,22 +103,17 @@ body {
         margin: 10px 0; /* Add margin for hover effects */
     }
 
-    .bg-black {
-        padding: 10px; /* Adjust padding for mobile */
-    }
-
-    .bg-[rgb(232,181,70)] {
-        padding: 4px; /* Adjust padding for program cards */
-    }
-
     img {
         width: 100%; /* Make images responsive */
         height: auto; /* Maintain aspect ratio */
     }
 
     #language-select {
-        width: 100%; /* Full width for mobile */
-        max-width: 100px; /* Limit max width */
+        width: auto; /* Auto width for mobile */
         padding: 10px; /* Padding for better touch targets */
         border-radius: 5px; /* Rounded corners */
-        background-color: rgb(232, 181, 70
+        background-color: rgb(232, 181, 70); /* Background color */
+        color: white; /* Text color */
+        font-weight: bold; /* Bold text */
+    }
+}
