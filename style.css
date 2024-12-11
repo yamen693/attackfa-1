@@ -1,0 +1,133 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0; /* Reset margin */
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.hover-raise {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hover-raise:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #1a202c, #2d3748);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #1a202c, #2d3748);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.transition-bg {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.transition-bg:hover {
+    background-color: #2d3748;
+}
+
+.hover-front {
+    transition: transform 0.3s, z-index 0.3s;
+}
+
+.hover-front:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.transition-text {
+    transition: color 0.3s ease-in-out;
+}
+
+.transition-text:hover {
+    color: white;
+}
+
+.transition-text-white {
+    transition: color 0.3s ease-in-out;
+}
+
+.transition-text-white:hover {
+    color: white;
+}
+
+/* Crosswise Text Style */
+.crosswise {
+    display: inline-block;
+    transform: rotate(-45deg);
+    margin: 20px; /* Margin around the text */
+    font-size: 24px; /* Base font size */
+    color: #333; /* Text color */
+}
+
+/* Media Query for devices with a max width of 768px */
+@media (max-width: 768px) {
+    body {
+        background-color: #fff; /* Change background color for mobile */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Reduce font size for headings */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Adjust h2 font size */
+    }
+
+    p {
+        font-size: 0.9em; /* Reduce font size for paragraphs */
+    }
+
+    .container {
+        padding: 10px; /* Add padding for mobile */
+    }
+
+    .nav {
+        flex-direction: column; /* Stack navigation items vertically */
+    }
+
+    .hover-raise {
+        margin: 10px 0; /* Add margin for hover effects */
+    }
+
+    .bg-black {
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    .bg-[rgb(232,181,70)] {
+        padding: 4px; /* Adjust padding for program cards */
+    }
+
+    img {
+        width: 100%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    #language-select {
+        width: 100%; /* Full width for mobile */
+        max-width: 100px; /* Limit max width */
+        padding: 10px; /* Padding for better touch targets */
+        border-radius: 5px; /* Rounded corners */
+        background-color: rgb(232, 181, 70

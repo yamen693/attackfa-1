@@ -9,150 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link href="./attack (1).png" rel="icon" type="image/x-icon"/>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0; /* Reset margin */
-        }
 
-        .fade-in {
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .slide-in {
-            animation: slideIn 1s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .hover-raise {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .hover-raise:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #1a202c, #2d3748);
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #1a202c, #2d3748);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .transition-bg {
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        .transition-bg:hover {
-            background-color: #2d3748;
-        }
-
-        .hover-front {
-            transition: transform 0.3s, z-index 0.3s;
-        }
-
-        .hover-front:hover {
-            transform: scale(1.05);
-            z-index: 10;
-        }
-
-        .transition-text {
-            transition: color 0.3s ease-in-out;
-        }
-
-        .transition-text:hover {
-            color: white;
-        }
-
-        .transition-text-white {
-            transition: color 0.3s ease-in-out;
-        }
-
-        .transition-text-white:hover {
-            color: white;
-        }
-
-        /* Crosswise Text Style */
-        .crosswise {
-            display: inline-block;
-            transform: rotate(-45deg);
-            margin: 20px; /* Margin around the text */
-            font-size: 24px; /* Base font size */
-            color: #333; /* Text color */
-        }
-        /* Media Query for devices with a max width of 768px */
-        @media (max-width: 768px) {
-            body {
-                background-color: #fff; /* Change background color for mobile */
-            }
-
-            h1 {
-                font-size: 0.5em; /* Reduce font size for headings */
-            }
-
-            h2 {
-                font-size: 1.8em; /* Adjust h2 font size */
-            }
-
-            p {
-                font-size: 0.9em; /* Reduce font size for paragraphs */
-                
-            }
-
-            .container {
-                padding: 10px; /* Add padding for mobile */
-            }
-
-            .nav {
-                flex-direction: column; /* Stack navigation items vertically */
-            }
-
-            .hover-raise {
-                margin: 10px 0; /* Add margin for hover effects */
-            }
-
-            .bg-black {
-                padding: 10px; /* Adjust padding for mobile */
-            }
-
-            .bg-[rgb(232,181,70)] {
-                padding: 4px; /* Adjust padding for program cards */
-            }
-
-            img {
-                width: 100%; /* Make images responsive */
-                height: auto; /* Maintain aspect ratio */
-            }
-            #language-select {
-                width: 100%; /* Full width for mobile */
-                max-width: 200px; /* Limit max width */
-                padding: 10px; /* Padding for better touch targets */
-                border-radius: 5px; /* Rounded corners */
-                background-color: rgb(232, 181, 70); /* Background color */
-                color: white; /* Text color */
-                font-weight: bold; /* Bold text */
-            }
-            
-            #language-select option {
-                padding: 10px; /* Padding for options */
-            }
-        
-
-      
-    </style>
 </head>
 <body class="bg-off-white">
     <header class="absolute top-0 left-0 w-full z-10">
@@ -304,7 +161,7 @@
     <script>
         document.getElementById('language-select').addEventListener('change', function() {
             const selectedLanguage = this.value;
-            if (selectedLanguage === 'EN') {
+            if (selectedLanguage === 'en') {
                 document.getElementById('title').innerText = 'Attack Football Academy';
             document.getElementById('about-title').innerText = 'About Us';
             document.getElementById('about-text').innerText = 'Welcome to Soccer Academy, where we nurture young talents and help them achieve their dreams of becoming professional soccer players. Our academy is dedicated to providing top-notch training and facilities to ensure the best development for our players.';
@@ -345,7 +202,7 @@
             document.getElementById('mobile-contact-link').innerText = 'Contact';
                 document.getElementById('title').innerText = 'Attack Football Academy';
                 
-            } else if (selectedLanguage === 'AR') {
+            } else if (selectedLanguage === 'ar') {
                 // Change content to Arabic
                 document.getElementById('title').innerText = 'أكاديمية أتاك';
                 document.getElementById('about-title').innerText = ' من نحن';
@@ -390,7 +247,7 @@
             ```javascript
 // Create an object to store translations
 const translations = {
-  EN: {
+  en: {
     title: 'Attack Football Academy',
     aboutTitle: 'About Us',
     aboutText: 'Welcome to Soccer Academy, where we nurture young talents and help them achieve their dreams of becoming professional soccer players. Our academy is dedicated to providing top-notch training and facilities to ensure the best development for our players.',
@@ -430,7 +287,7 @@ const translations = {
     mobileProgramsLink: 'Our Programs',
     mobileContactLink: 'Contact',
   },
-  AR: {
+  ar: {
     title: 'أكاديمية أتاك',
     aboutTitle: 'من نحن',
     aboutText: 'اكادمية اتاك تعمل علي تقديم الاساسيات الايجابيه للاعبين بتقنيات عالية الجوده في بيئه  تساعده لذالك كل فترات التدريب مصممه خصيصا للعمل علي شخصية الاعبين و تطوير مهراتهم الشخصيه و البدنيه تعمل الاكادميه في الوحدات التدريبيه في الناحيه البدنيه و الفنيه والنفسيه و الخططيه , مشاركة الاعبين في دوري اتحاد الكوره بمنطقة القاهره',
