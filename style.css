@@ -1,119 +1,101 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0; /* Reset margin */
+    background-color: #f8f9fa; /* Light background color */
+    font-family: 'Arial', sans-serif; /* Font style */
+    color: #333; /* Text color */
+}body {
+    background-color: #f8f9fa; /* Light background color */
+    font-family: 'Arial', sans-serif; /* Font style */
+    color: #333; /* Text color */
+}.navbar {
+    background-color: #007bff; /* Primary color for navbar */
+    padding: 15px; /* Padding for navbar */
+}
+.navbar-brand {
+    color: #fff; /* Logo text color */
+}
+.nav-link {
+    color: #fff; /* Link color */
+}
+.nav-link:hover {
+    color: #ffc107; /* Hover color for links */
+}.navbar {
+    background-color: #007bff; /* Primary color for navbar */
+    padding: 15px; /* Padding for navbar */
+}
+.navbar-brand {
+    color: #fff; /* Logo text color */
+}
+.nav-link {
+    color: #fff; /* Link color */
+}
+.nav-link:hover {
+    color: #ffc107; /* Hover color for links */
+}.s_banner {
+    background-size: cover; /* Cover the entire section */
+    color: #fff; /* Text color for banner */
+    text-align: center; /* Center text */
+}.s_banner {
+    background-size: cover; /* Cover the entire section */
+    color: #fff; /* Text color for banner */
+    text-align: center; /* Center text */
+}.btn-primary {
+    background-color: #28a745; /* Green background */
+    border: none; /* No border */
+}
+.btn-primary:hover {
+    background-color: #218838; /* Darker green on hover */
+}.btn-primary {
+    background-color: #28a745; /* Green background */
+    border: none; /* No border */
+}
+.btn-primary:hover {
+    background-color: #218838; /* Darker green on hover */
+}.card {
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.card-title {
+    font-weight: bold; /* Bold title */
+}.card {
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+.card-title {
+    font-weight: bold; /* Bold title */
+}footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: #fff; /* White text color */
+    padding: 20px 0; /* Padding for footer */
+}
+footer a {
+    color: #ffc107; /* Link color in footer */
+}footer {
+    background-color: #343a40; /* Dark background for footer */
+    color: #fff; /* White text color */
+    padding: 20px 0; /* Padding for footer */
+}
+footer a {
+    color: #ffc107; /* Link color in footer */
+}.program-card {
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 
-.fade-in {
-    animation: fadeIn 2s ease-in-out;
+.program-card:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background on hover */
+    color: white; /* Change text color to white */
 }
-
-.slide-in {
-    animation: slideIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideIn {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.hover-raise {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.hover-raise:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.gradient-bg {
-    background: linear-gradient(135deg, #1a202c, #2d3748);
-}
-
-.gradient-text {
-    background: linear-gradient(135deg, #1a202c, #2d3748);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.transition-bg {
-    transition: background-color 0.3s ease-in-out;
-}
-
-.transition-bg:hover {
-    background-color: #2d3748;
-}
-
-.hover-front {
-    transition: transform 0.3s, z-index 0.3s;
-}
-
-.hover-front:hover {
-    transform: scale(1.05);
-    z-index: 10;
-}
-
-.transition-text {
-    transition: color 0.3s ease-in-out;
-}
-
-.transition-text:hover {
-    color: white;
-}
-
-.transition-text-white {
-    transition: color 0.3s ease-in-out;
-}
-
-.transition-text-white:hover {
-    color: white;
-}
-
-/* Media Query for devices with a max width of 768px */
 @media (max-width: 768px) {
-    body {
-        background-color: #fff; /* Change background color for mobile */
+    .navbar {
+        flex-direction: column; /* Stack navbar items on small screens */
     }
-
-    h1 {
-        font-size: 1.5em; /* Reduce font size for headings */
+    .s_banner {
+        min-height: 400px; /* Adjust banner height for mobile */
     }
-
-    h2 {
-        font-size: 1.5em; /* Adjust h2 font size */
+}@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items on small screens */
     }
-
-    p {
-        font-size: 0.9em; /* Reduce font size for paragraphs */
-    }
-
-    .container {
-        padding: 10px; /* Add padding for mobile */
-    }
-
-    .nav {
-        flex-direction: column; /* Stack navigation items vertically */
-    }
-
-    .hover-raise {
-        margin: 10px 0; /* Add margin for hover effects */
-    }
-
-    img {
-        width: 100%; /* Make images responsive */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    #language-select {
-        width: auto; /* Auto width for mobile */
-        padding: 10px; /* Padding for better touch targets */
-        border-radius: 5px; /* Rounded corners */
-        background-color: rgb(232, 181, 70); /* Background color */
-        color: white; /* Text color */
-        font-weight: bold; /* Bold text */
+    .s_banner {
+        min-height: 400px; /* Adjust banner height for mobile */
     }
 }
